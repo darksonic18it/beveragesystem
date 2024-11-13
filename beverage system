@@ -1,0 +1,74 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main(){
+    int choice;
+    int juice = 0, taho = 0, soda = 0, milktea = 0;
+    double totalprice = 0.0, pay = 0.0;
+    const double juiceprice = 1.50;
+    const double tahoprice = 1.00;
+    const double sodaprice = 2.50;
+    const double milkteaprice = 3.50;
+    while (true){
+        cout << fixed << setprecision(2);
+        cout << "Choose a drink!" << endl;
+        cout << "1. Juice - $" << juiceprice << endl;
+        cout << "2. Taho - $" << tahoprice << endl;
+        cout << "3. Soda - $" << sodaprice << endl;
+        cout << "4. Milk Tea - $" << milkteaprice << endl;
+        cout << "5. Pay" << endl;
+        cout << "6. Exit" << endl;
+        cout << "Choice: ";
+        cin >> choice;
+
+        switch(choice){
+            case 1:
+                cout << "You choose juice!" << endl;
+                juice++;
+                totalprice += juiceprice;
+                break;
+            case 2:
+                cout << "You choose taho!" << endl;
+                taho++;
+                totalprice += tahoprice;
+                break;
+            case 3:
+                cout << "You choose soda!" << endl;
+                soda++;
+                totalprice += sodaprice;
+                break;
+            case 4:
+                cout << "You choose milk tea!" << endl;
+                milktea++;
+                totalprice += milkteaprice;
+                break;
+            case 5:
+                cout << "Here's the summary of your choices: \n";
+                cout << fixed << setprecision(2);
+                cout << "Juice: " << juice << " - $ " << juice * juiceprice << endl;
+                cout << "Taho: " << taho << " - $ " << taho * tahoprice << endl;
+                cout << "Soda: " << soda << " - $ " << soda * sodaprice << endl;
+                cout << "Milk Tea: " << milktea << " - $ " << milktea * milkteaprice << endl;
+                cout << "Your total cost is: $" << totalprice << endl;
+                cout << "Enter payment: ";
+                cin >> pay;
+                cout << "Your change is: $" << pay - totalprice << endl;
+                if(pay < totalprice){
+                    cout << "broke boi hahahaha!" << endl;
+                }else{
+                    cout << "Thank you come again!";
+                }
+                return 0;
+            case 6:
+                cout << "Thank you come again :)" << endl;
+                return 0;
+            default:
+                cout << "Invalid choice!" << endl;
+                cout << endl;
+                break;
+        }
+    }
+    
+    return 0;
+}
